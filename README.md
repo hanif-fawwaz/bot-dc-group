@@ -1,38 +1,40 @@
-# 🎵 Discord Music Bot (Glowing Version)
+# 🎵 Discord Music Bot (bot-dc-group)
 
-Bot Discord musik premium dengan antarmuka tombol (UI), mendukung pemutaran dari **YouTube** dan **Spotify**. Proyek ini menggunakan `discord.py` dan `yt-dlp` untuk pengalaman mendengarkan musik yang lancar.
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Discord.py](https://img.shields.io/badge/library-discord.py-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discordpy.readthedocs.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+Bot musik Discord modern yang mendukung pemutaran dari **YouTube** & **Spotify**. Bot ini menggunakan sistem **Slash Commands (/)** untuk pengalaman pengguna yang lebih bersih dan intuitif.
 
 ---
 
 ## ✨ Fitur Utama
+- **Slash Commands Support**: Perintah yang lebih rapi dan otomatis muncul di Discord.
+- **Interactive UI Buttons**: Kontrol musik langsung lewat tombol (Play/Pause, Skip, Loop, Stop).
+- **Spotify Integration**: Mendukung link lagu atau playlist dari Spotify.
+- **Queue Paginator**: Navigasi antrean lagu yang panjang dengan tombol halaman.
+- **Smart Looping**: Mode loop per lagu (`song`) atau satu antrean (`queue`).
+- **High Quality Audio**: Menggunakan FFmpeg untuk kualitas suara yang jernih.
 
-* **Antarmuka Interaktif:** Kontrol musik menggunakan tombol (Play/Pause, Skip, Loop, Stop) dan embed yang dinamis.
-* **Dukungan Spotify:** Putar lagu atau playlist langsung dari link Spotify.
-* **Sistem Queue:** Kelola daftar antrean lagu dengan fitur paginasi.
-* **Mode Loop:** Tersedia mode `off`, `song` (ulang satu lagu), dan `queue` (ulang seluruh antrean).
-* **High Quality Audio:** Menggunakan FFmpeg untuk pemrosesan audio yang jernih.
+## 🛠️ Persyaratan
+- **Python 3.8+**
+- **FFmpeg**: Wajib ada di sistem.
+  - *Default Path:* `C:\ffmpeg\bin\ffmpeg.exe` (Sesuaikan di dalam script jika berbeda).
 
+## 🚀 Instalasi & Setup
+
+1. **Clone Repository**
+   ```bash
+   git clone [https://github.com/hanif-fawwaz/bot-dc-group.git](https://github.com/hanif-fawwaz/bot-dc-group.git)
+   cd bot-dc-group
+Instal DependensiBashpip install -r requirements.txt
+Konfigurasi APIDiscord Token: Masukkan token bot Anda pada bagian bawah file bot.py.Spotify API: Buka spotify_bot.py dan masukkan CLIENT_ID serta CLIENT_SECRET Anda.Menjalankan BotBashpython bot.py
+(Gunakan bot_versi_glowing.py untuk mencoba versi terbaru).🎮 Daftar Perintah (/)IkonCommandDeskripsi🎵/play <query>Putar musik dari YouTube/Spotify (Link/Judul)🎧/nowplayingTampilkan info lagu & kontrol tombol📜/queueLihat daftar antrean musik⏭️/skipLewati lagu yang sedang diputar🔄/loop <mode>Pilih mode loop: off, song, atau queue⏹️/stopBerhenti dan hapus semua antrean🔊/volumeAtur volume suara bot (1-100)🚪/leaveKeluarkan bot dari Voice Channel📂 Struktur Folderbot.py: Main script (Stabil).bot_versi_glowing.py: Versi pengembangan/eksperimental.spotify_bot.py: Handler untuk API Spotify.ui_bot.py & ui_botV2.py: Komponen antarmuka tombol dan embed.requirements.txt: Library yang diperlukan.⚠️ TroubleshootingCommand Tidak Muncul? Pastikan bot sudah diundang dengan scope applications.commands.Tidak Ada Suara? Cek apakah path FFmpeg di kode sudah benar dan file ffmpeg.exe ada di sana.Maintained by hanif-fawwaz
 ---
 
-## 🛠️ Persyaratan Sistem
+### Perubahan Utama:
+1. **Fokus Slash Commands**: Saya menghapus instruksi prefix `!` dan fokus ke `/` karena keduanya sudah mendukung fitur tersebut.
+2. **Kategori Command**: Tabel perintah sekarang lebih lengkap (ada ikonnya agar lebih menarik).
+3. **Pembeda Versi**: Tetap mencantumkan `bot.py` sebagai yang utama agar user tidak bingung.
 
-Sebelum menjalankan bot, pastikan perangkat Anda sudah terinstal:
-* **Python 3.8+**
-* **FFmpeg:** Wajib terinstal di sistem dan path-nya sudah benar di dalam `bot.py` (Default: `C:\ffmpeg\bin\ffmpeg.exe`).
-* **Spotify Credentials:** Client ID dan Client Secret dari [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
-
----
-
-## 🚀 Instalasi
-
-### 1. Kloning Repositori
-```bash
-git clone [https://github.com/hanif-fawwaz/bot-dc-group.git](https://github.com/hanif-fawwaz/bot-dc-group.git)
-cd bot-dc-group
-2. Instal DependensiBashpip install -r requirements.txt
-3. KonfigurasiBuka file bot_versi_glowing.py atau bot.py dan spotify_bot.py untuk mengisi token Anda:Discord Token: Masukkan di bagian bawah file bot.Spotify API: Masukkan CLIENT_ID dan CLIENT_SECRET di spotify_bot.py.4. Jalankan BotBashpython bot_versi_glowing.py
-🎮 Perintah (Commands)Bot ini mendukung Slash Commands (/) untuk kemudahan penggunaan:CommandDeskripsi/play <query/url>Putar musik dari YouTube/Spotify/nowplayingMenampilkan lagu yang sedang diputar/queueMelihat daftar antrean lagu/skipMelewati lagu saat ini/pause / /resumeMenghentikan/melanjutkan musik/loop <mode>Mengatur mode pengulangan/leaveMengeluarkan bot dari voice channel📂 Struktur Filebot_versi_glowing.py: Script utama dengan fitur UI terbaru dan Slash Commands.bot.py: Script utama versi standar (Prefix !).spotify_bot.py: Modul untuk menangani integrasi API Spotify.ui_botV2.py: Logika antarmuka tombol dan embed premium.requirements.txt: Daftar library Python yang dibutuhkan.🤝 KontribusiTarik Pull Request atau buka Issue jika Anda menemukan bug atau ingin menambahkan fitur baru.Developed by Hanif Fawwaz
-**Catatan Tambahan:**
-Karena di file `bot.py` dan `bot_versi_glowing.py` kamu melakukan *hardcode* path FFmpeg ke `C:\ffmpeg\bin\ffmpeg.exe`, pastikan pengguna lain tahu bahwa mereka mungkin perlu mengubah path tersebut jika menggunakan Linux atau lokasi folder yang berbeda.
-
-Ada bagian lain yang ingin kamu tambahkan?
+Ingin saya bantu buatkan file `.env` juga supaya token Anda tidak perlu ditulis langsung di
